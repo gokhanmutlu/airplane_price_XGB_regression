@@ -26,40 +26,35 @@ Dataset: [Airplane Price Prediction](https://www.kaggle.com/datasets/asinow/airp
 
 ## Analyze (EDA)
 
-<img src="https://github.com/gokhanmutlu/surface_temperature_EDA/blob/main/images/Average%20Surface%20Temperature%20by%20Year.png" width="60%">
+<img src="https://github.com/gokhanmutlu/airplane_price_XGB_regression/blob/main/images/fiyat_dagilimi.png" width="60%">
 
 - Farklı modellerin farklı bölgelerdeki satış fiyatlarında gözle 
 görülür bir fark yok. Boeing 777'nin 
 Avrupadaki satışında aykırı veri noktaları içeriyor.
 <br/>
 
-<img src="https://github.com/gokhanmutlu/surface_temperature_EDA/blob/main/images/Hottest-Coldest%20Countries.png" width="60%">
+<img src="https://github.com/gokhanmutlu/airplane_price_XGB_regression/blob/main/images/fiyat_yas_dagilimi.png" width="80%">
 
 - Genel ve doğal olarak uçağın yaşı arttıkça fiyatı aynı 
 şekilde düşme eğilimi gösteriyor. Fakat bu düşüş bazı modeller için daha hızlı 
 olurken bazı modeller için daha hafif bir şekilde gerçekleşmiş.
 <br/>
 
-<img src="https://github.com/gokhanmutlu/surface_temperature_EDA/blob/main/images/Hottest-Coldest-Boxplot.png" width="60%">
+<p float="left">
+    <img src="https://github.com/gokhanmutlu/airplane_price_XGB_regression/blob/main/images/yakit_fiyat.png" width="49%">
+    <img src="https://github.com/gokhanmutlu/airplane_price_XGB_regression/blob/main/images/model_kapasite.png" width="49%">
+</p>
 
 - Cessna 172 modeli için yakıt tüketimi arttıkça fiyatında herhangi 
 bir değişim olmadığı gözükmekte. Bu uçak modelinin daha az kapasiteli olmasından dolayı 
 kaynaklanıyor olabilir.
 <br/>
 
-<img src="https://github.com/gokhanmutlu/surface_temperature_EDA/blob/main/images/Monthly%20Average%20Temperature.png" width="60%">
-
-- When examining the general temperature averages, it is evident that the average temperature during the summer season is higher compared to other seasons.
-<br/>
 
 
-<p float="left">
-    <img src="https://github.com/gokhanmutlu/surface_temperature_EDA/blob/main/images/Linear%20Regression.png" width="49%">
-    <img src="https://github.com/gokhanmutlu/surface_temperature_EDA/blob/main/images/Temperature%20Forecast.png" width="49%">
+<img src="https://github.com/gokhanmutlu/airplane_price_XGB_regression/blob/main/images/heatmap.png" width="60%">
 
-</p>
 
-<br/>
 
 - ``Üretim yılı`` ve `yaş` negatif korelasyon gösteriyor
 - ``Kapasite`` ``Menzil`` birbirleri arasında yüksek korelasyon gösteriyor. Multicollinearity oluşturuyor.
@@ -67,9 +62,25 @@ kaynaklanıyor olabilir.
 
 <br/>
 
+
 ## Construct
 
+Veri setinde kullanmak üzere 4 farklı model oluşturuldu. Her bir model için hipermetre tuning yapıldı ve cross validation'dan yararlanıldı.
+
+Bu modeller;
+1. Linear Regression
+2. AdaBoost Regression
+3. Gradient Regression
+4. XGB Regression
+
+   
+
+![Regression Models Results](https://github.com/user-attachments/assets/848a5ba7-84a6-4040-8506-b84762eff849)
+
+
 ## Summary
+
+<img src="https://github.com/gokhanmutlu/airplane_price_XGB_regression/blob/main/images/feature_importance.png" width="60%">
 
 1. Kapasite, doğrudan uçağın büyüklüğü ve taşıma kapasitesi ile ilgili olduğu için fiyat üzerinde belirleyici bir etkiye sahip.
 2. Üretim Yılı ise uçakların yaşını gösterdiği için, genellikle yaşlanan uçaklar daha düşük fiyatlara sahip olur. Bu yüzden üretim yılı, modeldeki en etkili faktörlerden biri olabiliyor.
